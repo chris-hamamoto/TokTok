@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+
+		* {
+			margin: 0px;
+			padding:  0px;
+			box-sizing: border-box;
+		}
+
+		#window {
+			width: 375px;
+			background: #fafafa;
+			margin: auto;
+			padding-top: 10vh;
+			position: relative;
+		}
+
+		#grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 10px;
+			padding: 10px;
+		}
+
+		#grid a {
+			display: block;
+			height: auto;
+		}
+
+		#grid a:hover {
+/*			background: rgba(0,0,0,.1);*/
+		}
+
+		#grid a img{
+			width: 100%;
+			height: auto;
+		}
+
+		/* Portrait and Landscape */
+		@media only screen and (max-device-width: 375px){ 
+		   
+
+		}
+
+	</style>
+		
+	<!--jquery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+
+
+</head>
+<body>
+
+<div id="window">
+	<div id="grid">
+		<a href="detail.html" data-movement=""><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+		<a href="detail.html"><img src="stills/basicstill.png" /></a>
+	</div>
+</div>
+
+	<script>
+		// $(document).ready(function(){
+		// });
+	</script>
+</body>
+</html>

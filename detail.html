@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+
+		* {
+			margin: 0px;
+			padding:  0px;
+			box-sizing: border-box;
+		}
+
+		#window {
+			width: 375px;
+			background: #fafafa;
+			margin: auto;
+			padding-top: 80vh;
+		}
+
+
+		.text {
+			width: calc(100% - 60px);
+			background: white;
+			border: 2px solid black;
+			padding: 10px;
+			margin-bottom: 48px;
+			opacity: 1;
+			transform: scale(.8) translateX(10px) translateY(10px);
+			transition: 300ms ease all;
+		}
+
+		.text.show {
+			opacity: 1;
+			transform: scale(1) translateX(0px) translateY(0px);			
+		}
+
+		.question {
+			margin-left: 20px;
+			transform-origin: bottom left;
+		}
+
+		.answer {
+			margin-left: 40px;
+			transform-origin: bottom right;
+		}
+
+		.text p {
+			font-family: arial;
+			font-size: 18px;
+			line-height: 24px;			
+			margin-bottom: 24px;
+		}
+
+		/* Portrait and Landscape */
+		@media only screen and (max-device-width: 375px){ 
+		   
+
+		}
+
+	</style>
+		
+	<!--jquery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+
+
+</head>
+<body>
+
+<div id="window">
+	<div id="warning" style="display: none">warning!</div>
+	<div class="text question">
+		<p>
+			Donec nec ultrices neque. In suscipit, nunc eget convallis consequat, ipsum arcu euismod nibh.
+		</p>
+	</div>	
+	<div class="text answer">
+		<p>
+			Nunc congue ut sem ullamcorper feugiat. Aenean molestie gravida accumsan.
+		</p>
+	</div>	
+	<div class="text question">
+		<p>
+			Aenean sodales risus in ipsum efficitur porttitor. Fusce ligula tortor, posuere id libero in, scelerisque elementum mauris. Nulla bibendum dictum bibendum. Donec viverra ipsum dapibus lacus semper commodo et vel nisi. Mauris dapibus posuere libero, id ornare risus lobortis vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In aliquam ac velit at luctus. Ut gravida risus a libero accumsan ornare.
+		</p>
+		<p>
+			Duis finibus dolor velit, id congue tortor vulputate at. Sed tristique mauris mattis, elementum est eget, egestas massa. Sed sit amet consequat velit. Mauris malesuada quam in imperdiet volutpat. Pellentesque feugiat, nibh sit amet placerat consectetur, sem risus sodales leo, posuere sodales lacus erat nec augue. Nullam euismod eu quam at finibus. Cras vitae fermentum massa. Donec et rutrum elit, vel rhoncus lorem. Aliquam et fringilla tortor. Quisque non ornare nulla, eu blandit ipsum. Aliquam aliquam ex ac mauris consectetur consectetur at eu eros.
+		</p>
+	</div>
+	<div class="text answer">
+		<p>
+			Donec feugiat consequat turpis ac vestibulum. Morbi pulvinar ante quis nisl dapibus tempus. Suspendisse imperdiet enim ac elit lacinia, ac pretium nibh tristique. Nunc congue ut sem ullamcorper feugiat. Aenean molestie gravida accumsan. Nullam sit amet imperdiet sapien. Aenean tortor elit, consectetur non lacus a, elementum ultricies diam. Phasellus tincidunt tortor enim.
+		</p>
+	</div>
+
+	<div class="text question">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae mollis risus. Vivamus malesuada suscipit tempor. Sed posuere, tortor et condimentum euismod, ante ligula porta mauris, vel elementum leo lorem quis magna. Fusce elementum mauris magna, eu fringilla enim rhoncus eu. Duis tristique viverra urna eget rutrum. Donec nec facilisis nunc, porttitor scelerisque velit. Proin ac nulla non orci dignissim ornare. Vivamus finibus non lacus ac sagittis. Mauris at justo sodales, auctor lorem vel, iaculis nulla. Donec vestibulum lacus in fringilla ullamcorper.
+		</p>
+	</div>
+	<div class="text answer">
+		<p>
+			Integer vehicula interdum dui, dapibus laoreet nisi. Donec nec ultrices neque. In suscipit, nunc eget convallis consequat, ipsum arcu euismod nibh, sit amet fermentum lacus purus nec augue. Suspendisse dignissim lectus eros, in placerat orci imperdiet vel. In hac habitasse platea dictumst. Vivamus tempor eleifend velit, in tincidunt nulla consectetur quis. Etiam dapibus feugiat ultricies. Morbi tortor urna, gravida placerat scelerisque non, finibus vel ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin at sodales leo. Duis at quam id nisi dictum congue.
+		</p>
+		<p>
+			Aliquam purus arcu, posuere sed pharetra eu, maximus at mauris. Nullam sollicitudin, quam sed mollis faucibus, sem ante tempus eros, nec pellentesque purus elit vel dui. Sed hendrerit mollis risus nec tempor. Maecenas ac aliquet leo, a congue leo. Phasellus sollicitudin nulla a hendrerit fermentum. Aliquam consequat tincidunt urna in pellentesque. Nulla vel ornare ipsum, euismod placerat augue. Quisque tincidunt malesuada laoreet. Vivamus faucibus consectetur nulla, nec lacinia libero scelerisque vel. Mauris id enim id ante lobortis ullamcorper. Vestibulum condimentum est nulla. Sed porttitor est accumsan dignissim vehicula. Praesent viverra risus at felis ornare efficitur.
+		</p>
+	</div>
+</div>
+	<script>
+		if(!!window.IntersectionObserver){
+			let observer = new IntersectionObserver((entries, observer) => { 
+				entries.forEach(entry => {
+					if(entry.isIntersecting){
+						console.log(entry);
+						entry.target.classList.add("show");
+						// entry.target.src = entry.target.dataset.src;
+						// observer.unobserve(entry.target);
+					} else {
+						// entry.target.classList.remove("show");						
+					}
+				});
+			}, {rootMargin: "0px 0px -50px 0px"});
+			
+			document.querySelectorAll('.text').forEach(div => { observer.observe(div) });
+		}
+
+		else document.querySelector('#warning').style.display = 'block';
+
+	// $(document).ready(function(){
+
+	// });
+	</script>
+</body>
+</html>
