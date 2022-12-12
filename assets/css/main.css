@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding:  0px;
+    box-sizing: border-box;
+}
+
+#window {
+    width: 375px;
+    background: #fafafa;
+    margin: auto;
+    padding-top: 10vh;
+    position: relative;
+}
+
+/* landing page */
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+#grid a {
+    display: block;
+    height: auto;
+}
+
+#grid a:hover {
+/*          background: rgba(0,0,0,.1);*/
+}
+
+#grid a img{
+    width: 100%;
+    height: auto;
+}
+
+/* detail page */
+
+.text {
+    width: calc(100% - 60px);
+    padding: 30px 20px;
+    margin-bottom: 48px;
+    opacity: 1;
+    transform: scale(.8) translateX(10px) translateY(10px);
+    transition: 300ms ease all;
+
+    background-image:url('../img/ongoing-bg-landing.svg');
+    backgound-size: contain;
+}
+
+.text.show {
+    opacity: 1;
+    transform: scale(1) translateX(0px) translateY(0px);            
+}
+
+.question {
+    margin-left: 20px;
+    transform-origin: bottom left;
+}
+
+.answer {
+    margin-left: 40px;
+    transform-origin: bottom right;
+}
+
+.text p {
+    font-family: arial;
+    font-size: 18px;
+    line-height: 24px;          
+    margin-bottom: 12px;
+}
+
+#image-scroll {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 100px;
+}
+
+#images {
+    width: 2400px;
+    display: flex;
+    flex-direction: row;
+}
+
+#images img {
+    margin: 40px;
+    width: auto;
+    height: 400px;
+/*    mix-blend-mode: multiply;*/
+}
+
+/* Portrait and Landscape */
+@media only screen and (max-device-width: 375px){ 
+
+
+}
