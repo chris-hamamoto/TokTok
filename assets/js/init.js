@@ -10,6 +10,29 @@ $(document).ready(function() {
     }
 
     // do this code for each image on the page
+    $('#desktop-grid span').each(function () {
+
+        // get a random height within the height of the window
+        var rndTop = randomIntFromInterval(1, height)
+        // get a random width within the width of the window
+        var rndLeft = randomIntFromInterval(1, width)         
+
+        if(rndTop < 160) {
+            rndTop = 160;
+        }
+
+        if(rndLeft < 100) {
+            rndLeft = 100;
+        }
+
+        // set the position of the current image
+        $(this).css({
+            'top': rndTop-60 +'px',
+            'left': rndLeft-60+'px'
+        })
+    });
+
+    // do this code for each image on the page
     $('#grid a').each(function () {
 
         // get a random height within the height of the window

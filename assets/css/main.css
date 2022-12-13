@@ -89,28 +89,24 @@ body.korean .english {
 
 
 #window {
-    max-width: 420px;
-    width: 100%;
     min-height: 100vh;
     margin: auto;
     padding-top: 10px;
     padding-bottom: 20px;
     position: relative;
-
     background: white;
 }
 
 /* menu */
 
 #menu {
-    max-width: 400px;
     width: calc(100% - 20px);
     min-height: calc(100vh - 40px);
     position: fixed;
     background: #fff;
     color: white;
     top: 20px;
-    left: calc(50% - 200px);
+    left: 10px;
     
     display: flex;
     align-items: center;
@@ -161,6 +157,7 @@ body.korean .english {
 
 /* landing page */
 
+
 header {
     padding: 14px;
     margin: 10px;
@@ -195,6 +192,8 @@ header img {
     top: 15px;
     width: 26px;
     height: auto;
+
+    display: none;
 }
 
 a#logo {
@@ -209,28 +208,86 @@ a#logo:hover {
     text-shadow: 0px 0px 10px black;
 }
 
-#grid {
+#desktop-grid {
     display: block;
-    /*display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    padding: 10px;*/
 }
 
-#grid a {
+#desktop-grid span {
     position: absolute;
     display: block;
-    width: 120px;
+    width: 140px;
     height: auto;
 }
 
-#grid a:hover {
-/*          background: rgba(0,0,0,.1);*/
+#desktop-grid span :hover {
+    /* background: rgba(0,0,0,.1); */
 }
 
-#grid a img{
+#desktop-grid span img{
     width: 100%;
     height: auto;
+}
+
+.popup {
+    padding-top: 0px;
+    width: 375px;
+    height: 627px;
+    position: absolute;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    background: #0161FF;
+
+    box-shadow:
+    inset 0px 2px 5px 2px rgb(255 255 255 / 50%),
+    inset 0px -3px 7px 3px rgb(0 0 0 / 46%),
+    inset 0 0 3px 5px rgb(0 0 0 / 5%),
+    2px 2px 4px 0 rgb(0 0 0 / 25%);    
+
+    z-index: 99;     
+}
+
+.popup-close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.popup-close img{
+    width: 100%;
+    height: auto;
+}
+
+.frame-header {
+    width: 375px;
+    height: 40px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 0px;
+    
+    background: #0161FF;
+
+    box-shadow:
+    inset 0px 2px 5px 2px rgb(255 255 255 / 50%),
+    inset 0px -3px 7px 3px rgb(0 0 0 / 46%),
+    inset 0 0 3px 5px rgb(0 0 0 / 5%),
+    2px 2px 4px 0 rgb(0 0 0 / 25%);  
+    z-index: 100; 
+}
+
+iframe {
+
+    transform: translateY(-40px);
+}
+
+
+#grid {
+    display: none;
 }
 
 /* detail page */
@@ -343,7 +400,6 @@ body#seogwon #window {
 
 #aydan #images {
     width: 1140px;  
-    background: pink; 
 }
 
 #harri #images {
@@ -381,7 +437,34 @@ body#seogwon #images {
 
 
 /* Portrait and Landscape */
-@media only screen and (max-device-width: 375px){ 
+@media only screen and (max-width: 420px){ 
 
+    header img {
+        display: block;
+    }
+
+    #desktop-grid {
+        display: none;
+    }
+
+    #grid {
+        display: block;
+    }
+
+    #grid a {
+        position: absolute;
+        display: block;
+        width: 100px;
+        height: auto;
+    }
+
+    #grid a:hover {
+    /*          background: rgba(0,0,0,.1);*/
+    }
+
+    #grid a img{
+        width: 100%;
+        height: auto;
+    }
 
 }
