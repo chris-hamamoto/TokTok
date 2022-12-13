@@ -23,9 +23,70 @@
     font-family: Comfortaa;
 }
 
+html {
+    scroll-behavior: smooth;    
+}
+
 body {
     background: #ece9db;    
 }
+
+#jump {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px;
+    padding: 10px;
+
+    background-color: #bfd3f8;
+
+    border: 2px solid #000000;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px #ECE9DB;
+    border-radius: 2px;
+}
+
+a#jump {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+/* language */
+
+#language {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    border: 2px solid #000000;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px #ECE9DB;
+    border-radius: 2px;
+    background-color: #bfd3f8;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    z-index: 1000000;
+}
+
+body.english .korean {
+    display: none;
+}
+
+body.english .english {
+    display: block;
+}
+
+body.korean .korean {
+    display: korean;
+}
+
+body.korean .english {
+    display: none;
+}
+
 
 #window {
     max-width: 420px;
@@ -33,6 +94,7 @@ body {
     min-height: 100vh;
     margin: auto;
     padding-top: 10px;
+    padding-bottom: 20px;
     position: relative;
 
     background: white;
@@ -212,10 +274,15 @@ body.detail #window {
 /* eungjoo */
 
 body#eungjoo #window {
-    background-image: url('../img/people.png');
-    background-size: contain;
     background-position: 0px 170px;
-    background-repeat: no-repeat;
+}
+
+body#moonsick #window {
+    background-position: 0px 170px;
+}
+
+body#seogwon #window {
+    background-position: 0px 170px;
 }
 
 
@@ -235,6 +302,17 @@ body#eungjoo #window {
     margin-bottom: 14px;
 }
 
+.text ul {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 20px;
+    margin-bottom: 14px;
+}
+
+.text li {
+    list-style-position: outside;
+}
+
 #image-scroll {
     width: 100%;
     overflow: auto;
@@ -250,9 +328,57 @@ body#eungjoo #window {
 #images img {
     margin: 40px;
     width: auto;
-    height: 400px;
-/*    mix-blend-mode: multiply;*/
+    width: 400px;
 }
+
+#images img.vertical {
+    width: 300px;
+    height: auto;
+}
+
+#images img.horizontal {
+    width: 400px;
+    height: auto;
+}
+
+#aydan #images {
+    width: 1140px;  
+    background: pink; 
+}
+
+#harri #images {
+    width: 2000px;  
+}
+
+#hyunjin #images {
+    width: 2410px;  
+    background: black;
+}
+
+#mike #images {
+    width: 860px;
+}
+
+#pilar #images {
+    width: 2000px;
+    background: grey;
+}
+
+#yeonjae #images {
+    width: 1460px;
+    background: black;
+}
+
+#moonsick #images {
+    width: 2480px;
+    background: black;
+}
+
+body#seogwon #images {
+    width: 2660px;
+    background: black;
+}
+
 
 /* Portrait and Landscape */
 @media only screen and (max-device-width: 375px){ 

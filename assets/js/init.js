@@ -40,6 +40,11 @@ $(document).ready(function() {
         $('#menu').removeClass('active');
     });
 
+    $('#language').click(function(){
+        $('body').toggleClass('english');
+        $('body').toggleClass('korean');
+    });
+
     /* hover */
     var movement;
 
