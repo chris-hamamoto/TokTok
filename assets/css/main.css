@@ -1,28 +1,164 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"), url("../fonts/Comfortaa-Regular.ttf") format("TrueType");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"), url("../fonts/Comfortaa-SemiBold.ttf") format("TrueType");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"), url("../fonts/Comfortaa-Bold.ttf") format("TrueType");
+    font-weight: 700;
+}
+
 * {
     margin: 0px;
     padding:  0px;
     box-sizing: border-box;
+    font-family: Comfortaa;
+}
+
+body {
+    background: #ece9db;    
 }
 
 #window {
-    width: 375px;
-    background: #fafafa;
+    max-width: 420px;
+    width: 100%;
+    min-height: 100vh;
     margin: auto;
-    padding-top: 10vh;
+    padding-top: 10px;
     position: relative;
+
+    background: white;
+}
+
+/* menu */
+
+#menu {
+    max-width: 400px;
+    width: calc(100% - 20px);
+    min-height: calc(100vh - 40px);
+    position: fixed;
+    background: #fff;
+    color: white;
+    top: 20px;
+    left: calc(50% - 200px);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #000000;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 64px #ECE9DB;
+    border-radius: 2px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 10000;
+}
+
+#menu.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#close img{
+    width: 100%;
+    height: auto;
+}
+
+#menu ul{
+    font-size: 24px;
+    line-height: 36px;
+    list-style-type: none;
+}
+
+#menu ul li {
+    margin-bottom: 20px;    
+}
+
+#menu a{
+    color: black;
+    text-decoration: none;
 }
 
 /* landing page */
 
+header {
+    padding: 14px;
+    margin: 10px;
+    border-radius: 16px;
+    background: #0161FF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    box-shadow:
+    inset 0px 2px 5px 2px rgb(255 255 255 / 50%),
+    inset 0px -3px 7px 3px rgb(0 0 0 / 46%),
+    inset 0 0 3px 5px rgb(0 0 0 / 5%),
+    2px 2px 4px 0 rgb(0 0 0 / 25%);
+
+    z-index: 1000;
+    position: relative;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;    
+}
+
+header h1, header img {
+    display: inline-block;
+}
+
+header img {
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    width: 26px;
+    height: auto;
+}
+
+a#logo {
+    text-decoration: none;
+    color: white;
+    display: block;
+    cursor: pointer;
+
+}
+
+a#logo:hover {
+    text-shadow: 0px 0px 10px black;
+}
+
 #grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: block;
+    /*display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    padding: 10px;
+    padding: 10px;*/
 }
 
 #grid a {
+    position: absolute;
     display: block;
+    width: 120px;
     height: auto;
 }
 
@@ -37,22 +173,51 @@
 
 /* detail page */
 
+body.detail #window {
+    background-image: url('../img/people.png');
+    background-size: contain;
+    background-position: 0px 130px;
+    background-repeat: no-repeat;
+}
+
 .text {
     width: calc(100% - 60px);
-    padding: 30px 20px;
+    padding: 15px 15px 7px;
     margin-bottom: 48px;
     opacity: 1;
     transform: scale(.8) translateX(10px) translateY(10px);
     transition: 300ms ease all;
-
-    background-image:url('../img/ongoing-bg-landing.svg');
-    backgound-size: contain;
+    border: 2px solid #000000;
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 64px #ECE9DB;
+    border-radius: 10px;
 }
 
 .text.show {
     opacity: 1;
     transform: scale(1) translateX(0px) translateY(0px);            
 }
+
+/* intros */
+
+.text.question.intro {
+    margin-top: 15px;
+ }
+
+.text.answer.intro {
+    margin-top: 260px;
+    margin-bottom: 180px;    
+}
+
+/* eungjoo */
+
+body#eungjoo #window {
+    background-image: url('../img/people.png');
+    background-size: contain;
+    background-position: 0px 170px;
+    background-repeat: no-repeat;
+}
+
 
 .question {
     margin-left: 20px;
@@ -65,10 +230,9 @@
 }
 
 .text p {
-    font-family: arial;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;          
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 #image-scroll {
