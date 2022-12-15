@@ -101,14 +101,13 @@ body.korean .english {
 
 #menu {
     width: calc(100% - 20px);
-    min-height: calc(100vh - 40px);
+    height: calc(100vh - 40px);
     position: fixed;
     background: #fff;
     color: white;
     top: 20px;
     left: 10px;
-    
-    display: flex;
+    padding: 50px 40px 40px;
     align-items: center;
     justify-content: center;
 
@@ -120,6 +119,7 @@ body.korean .english {
     pointer-events: none;
 
     z-index: 10000;
+    overflow: scroll;
 }
 
 #menu.active {
@@ -127,12 +127,16 @@ body.korean .english {
     pointer-events: all;
 }
 
+body.overlay {
+    overflow: hidden;
+}
+
 #close {
     width: 24px;
     height: 24px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    position: fixed;
+    top: 30px;
+    right: 20px;
 }
 
 #close img{
@@ -466,5 +470,16 @@ body#seogwon #images {
         width: 100%;
         height: auto;
     }
+
+    #window {
+        min-height: 100vh;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        position: relative;
+        background: white;
+        overflow-x: hidden;
+    }
+
 
 }

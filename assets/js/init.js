@@ -57,10 +57,12 @@ $(document).ready(function() {
 
     $('.lines').click(function(){
         $('#menu').addClass('active');
+        $('body').addClass('overlay');
     });
 
     $('#close').click(function(){
         $('#menu').removeClass('active');
+        $('body').removeClass('overlay');
     });
 
     $('#language').click(function(){
@@ -71,7 +73,7 @@ $(document).ready(function() {
     /* hover */
     var movement;
 
-    $('#grid a').hover(function(){
+    $('#desktop-grid span').hover(function(){
         movement = $(this).data('movement');
         $(this).find('img').attr('src', 'assets/img/gifs/'+movement+'');
     }, function(){
@@ -92,14 +94,24 @@ $(document).ready(function() {
 
     }
 
-        $('#grid a').each(function(){
-            var id = $(this).attr('id')
-            var rand = Math.round(Math.random() * (15000 - 10000)) + 1000;
-            setTimeout(function() {
-                change(id);
-            }, rand);
-            console.log(rand)
-        });
+    $('#desktop-grid span').each(function(){
+        var id = $(this).attr('id')
+        var rand = Math.round(Math.random() * (15000 - 10000)) + 1000;
+        setTimeout(function() {
+            change(id);
+        }, rand);
+        console.log(rand)
+    });
+
+    $('#grid a').each(function(){
+        var id = $(this).attr('id')
+        var rand = Math.round(Math.random() * (15000 - 10000)) + 1000;
+        setTimeout(function() {
+            change(id);
+        }, rand);
+        console.log(rand)
+    });
+
 
     /* scrolling for interviews */
 
